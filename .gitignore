@@ -39,11 +39,7 @@ Thumbs.db
 
 # IDE/Editor Specific (optional, remove if not using these)
 .vscode/
-.idea/
 *.swp
-
-# macOS specific files
-*.DS_Store
 
 # React specific
 *.cache/
