@@ -1,0 +1,57 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Logs
+logs
+*.log
+logs/*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# Build directories
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Testing
+/coverage
+.nyc_output/
+coverage/
+*.lcov
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# IDE/Editor Specific (optional, remove if not using these)
+.vscode/
+.idea/
+*.swp
+
+# macOS specific files
+*.DS_Store
+
+# React specific
+*.cache/
+public/static/
+src/**/*.test.js
+src/**/*.test.tsx
+
+# Heroku specific
+/.heroku/
+
+# Optional: if you plan to use any specific deployment services like Netlify, Vercel, etc., add their specific files here as well
