@@ -49,17 +49,12 @@ export default function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <img className="h-8 w-auto" src={logo} alt="Logo" />
+              <a href="/">
+                <img className="h-12 w-auto" src={logo} alt="Logo" />
+              </a>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                <Link
-                  to="/"
-                  className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                  aria-current="page"
-                >
-                  Dashboard
-                </Link>
                 <Link
                   to="/projects"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -75,13 +70,6 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div className="sm:hidden" id="mobile-menu">
         <div className="space-y-1 px-2 pb-3 pt-2">
-          <a
-            href="#"
-            className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-            aria-current="page"
-          >
-            Dashboard
-          </a>
           <Link
             to="/projects"
             className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
