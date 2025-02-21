@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react"; // Added useCallback import
+import { useState, useEffect, useRef, useCallback } from "react"; // Added useCallback import
 
 const SCROLL_LOCK_DURATION = 500;
 const TOTAL_SECTIONS = 5;
@@ -14,8 +14,8 @@ const FullPageScroll = () => {
   useEffect(() => {
     currentSectionRef.current = currentSection;
   }, [currentSection]);
-
-  const sections = Array.from({ length: TOTAL_SECTIONS }, (_, index) => (
+  /*
+  const sections = Array.from({ length: TOTAL_SECTIONS - 5 }, (_, index) => (
     <div
       key={index}
       style={{
@@ -30,7 +30,7 @@ const FullPageScroll = () => {
       Section {index + 1}
     </div>
   ));
-
+*/
   const totalSectionHeight = TOTAL_SECTIONS * window.innerHeight;
 
   const scrollToSection = useCallback((targetSection) => {
@@ -157,7 +157,7 @@ const FullPageScroll = () => {
     };
   }, [handleWheel, handleTouchStart, handleTouchMove]);
 
-  return <div>{sections}</div>;
+  return;
 };
 
 export default FullPageScroll;
