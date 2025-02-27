@@ -1,8 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Import Link from React Router
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Link as ScrollLink, Events, scrollSpy } from "react-scroll";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    Events.scrollEvent.register("begin", function () {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register("end", function () {
+      console.log("end", arguments);
+    });
+
+    scrollSpy.update();
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
+  }, []);
+
   return (
     <nav className="fixed top-0 w-full bg-gray-800 z-50">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -34,7 +54,7 @@ export default function Navbar() {
               <svg
                 className="hidden h-6 w-6"
                 fill="none"
-                viewBox="0 0 24 24"
+                viewBox="0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
@@ -55,6 +75,47 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
+                <ScrollLink
+                  to="about-me"
+                  smooth={true}
+                  duration={500}
+                  className={`rounded-md px-3 py-3 text-sm font-medium ${
+                    activeSection === "about-me"
+                      ? "bg-gray-700 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                  }`}
+                  onSetActive={() => setActiveSection("about-me")}
+                >
+                  About Me
+                </ScrollLink>
+                <ScrollLink
+                  to="professional-experience"
+                  smooth={true}
+                  duration={500}
+                  className={`rounded-md px-3 py-3 text-sm font-medium ${
+                    activeSection === "professional-experience"
+                      ? "bg-gray-700 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                  }`}
+                  onSetActive={() =>
+                    setActiveSection("professional-experience")
+                  }
+                >
+                  Professional Experience
+                </ScrollLink>
+                <ScrollLink
+                  to="academic-profile"
+                  smooth={true}
+                  duration={500}
+                  className={`rounded-md px-3 py-3 text-sm font-medium ${
+                    activeSection === "academic-profile"
+                      ? "bg-gray-700 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                  }`}
+                  onSetActive={() => setActiveSection("academic-profile")}
+                >
+                  Academic Profile
+                </ScrollLink>
                 <Link
                   to="/projects"
                   className="rounded-md px-3 py-3 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -72,10 +133,49 @@ export default function Navbar() {
         <div className="space-y-1 px-2 pb-3 pt-2">
           <Link
             to="/projects"
-            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            className="rounded-md px-3 py-3 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
           >
             Projects
           </Link>
+          <ScrollLink
+            to="about-me"
+            smooth={true}
+            duration={500}
+            className={`rounded-md px-3 py-2 text-sm font-medium ${
+              activeSection === "about-me"
+                ? "bg-gray-700 text-white"
+                : "text-gray-300 hover:bg-gray-700 hover:text-white"
+            }`}
+            onSetActive={() => setActiveSection("about-me")}
+          >
+            About Me
+          </ScrollLink>
+          <ScrollLink
+            to="professional-experience"
+            smooth={true}
+            duration={500}
+            className={`rounded-md px-3 py-2 text-sm font-medium ${
+              activeSection === "professional-experience"
+                ? "bg-gray-700 text-white"
+                : "text-gray-300 hover:bg-gray-700 hover:text-white"
+            }`}
+            onSetActive={() => setActiveSection("professional-experience")}
+          >
+            Professional Experience
+          </ScrollLink>
+          <ScrollLink
+            to="academic-profile"
+            smooth={true}
+            duration={500}
+            className={`rounded-md px-3 py-2 text-sm font-medium ${
+              activeSection === "academic-profile"
+                ? "bg-gray-700 text-white"
+                : "text-gray-300 hover:bg-gray-700 hover:text-white"
+            }`}
+            onSetActive={() => setActiveSection("academic-profile")}
+          >
+            Academic Profile
+          </ScrollLink>
         </div>
       </div>
     </nav>

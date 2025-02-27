@@ -8,18 +8,27 @@ import { FullPageScroll } from "../../components";
 
 const Home = () => {
   return (
-    <div className="main-content">
+    <div>
       <div>
         <FullPageScroll />
       </div>
-      <section className="relative w-full h-screen mx-auto">
+      <section
+        id="about-me"
+        className="relative w-full h-screen mx-auto home-section"
+      >
         <AboutMe />
         <ComputersCanvas />
       </section>
-      <section className="relative w-full h-screen mx-auto">
+      <section
+        id="professional-experience"
+        className="relative w-full h-screen mx-auto home-section"
+      >
         <ProfessionalExperience />
       </section>
-      <section className="relative w-full h-screen mx-auto">
+      <section
+        id="academic-profile"
+        className="relative w-full h-screen mx-auto home-section"
+      >
         <AcademicProfile />
       </section>
       <div>
