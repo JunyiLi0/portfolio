@@ -4,15 +4,16 @@ import AcademicProfile from "./AcademicProfile";
 import ProfessionalExperience from "./ProfessionalExperience";
 import Footer from "./Footer";
 import ComputersCanvas from "../../components/canvas/computer";
+import { FullPageScroll } from "../../components";
 
 const Home = () => {
   return (
-    <div>
-      <script src="/home/junyi/portfolio/frontend/src/components/FullPageScroll.js"></script>
+    <div className="main-content">
+      <div>
+        <FullPageScroll />
+      </div>
       <section className="relative w-full h-screen mx-auto">
         <AboutMe />
-      </section>
-      <section className="relative w-full h-screen mx-auto">
         <ComputersCanvas />
       </section>
       <section className="relative w-full h-screen mx-auto">

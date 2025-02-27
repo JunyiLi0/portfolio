@@ -24,7 +24,7 @@ export default function Project() {
               myself: run the server beforehand
             </p>
           </Link>
-          {/* Add more products if needed */}
+          {/* Add more projects if needed */}
         </div>
       </div>
     </div>
