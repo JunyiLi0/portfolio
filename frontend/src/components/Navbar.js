@@ -54,7 +54,7 @@ export default function Navbar() {
               <svg
                 className="hidden h-6 w-6"
                 fill="none"
-                viewBox="0 24 24"
+                viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
@@ -79,6 +79,9 @@ export default function Navbar() {
                   to="about-me"
                   smooth={true}
                   duration={500}
+                  spy={true}
+                  offset={-50}
+                  activeClass="bg-gray-700 text-white"
                   className={`rounded-md px-3 py-3 text-sm font-medium ${
                     activeSection === "about-me"
                       ? "bg-gray-700 text-white"
@@ -92,6 +95,9 @@ export default function Navbar() {
                   to="professional-experience"
                   smooth={true}
                   duration={500}
+                  spy={true}
+                  offset={-50}
+                  activeClass="bg-gray-700 text-white"
                   className={`rounded-md px-3 py-3 text-sm font-medium ${
                     activeSection === "professional-experience"
                       ? "bg-gray-700 text-white"
@@ -107,6 +113,9 @@ export default function Navbar() {
                   to="academic-profile"
                   smooth={true}
                   duration={500}
+                  spy={true}
+                  offset={-50}
+                  activeClass="bg-gray-700 text-white"
                   className={`rounded-md px-3 py-3 text-sm font-medium ${
                     activeSection === "academic-profile"
                       ? "bg-gray-700 text-white"
@@ -141,6 +150,9 @@ export default function Navbar() {
             to="about-me"
             smooth={true}
             duration={500}
+            spy={true}
+            offset={-50}
+            activeClass="bg-gray-700 text-white"
             className={`rounded-md px-3 py-2 text-sm font-medium ${
               activeSection === "about-me"
                 ? "bg-gray-700 text-white"
@@ -154,6 +166,9 @@ export default function Navbar() {
             to="professional-experience"
             smooth={true}
             duration={500}
+            spy={true}
+            offset={-50}
+            activeClass="bg-gray-700 text-white"
             className={`rounded-md px-3 py-2 text-sm font-medium ${
               activeSection === "professional-experience"
                 ? "bg-gray-700 text-white"
@@ -167,6 +182,9 @@ export default function Navbar() {
             to="academic-profile"
             smooth={true}
             duration={500}
+            spy={true}
+            offset={-50}
+            activeClass="bg-gray-700 text-white"
             className={`rounded-md px-3 py-2 text-sm font-medium ${
               activeSection === "academic-profile"
                 ? "bg-gray-700 text-white"
